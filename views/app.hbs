@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html{
+            background-image:url("images/pattern.png");
+            background-size:cover;
+        }
+        #main {
+            margin: auto;
+            width: 400px;
+            height: 300px;
+            border: 1px solid white;
+            position: relative;
+            background-color: white;
+            box-shadow: 5px 5px 5px rgb(220,192,2);
+        }
+
+        #main input {
+            border: none;
+            width: 98%;
+             
+        }
+
+        form {
+            height: 100%
+        }
+
+        #text {
+            height: 80%;
+            resize: none;
+            width: 98%;
+            border: none
+        }
+
+        button {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            position: absolute;
+            top: 282px;
+            right: 0px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    {{>navbar}}
+    <Br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="main">
+        <form method="POST" action="/addingdata">
+        
+            <input id="title" name="title" placeholder="title">
+            <br>
+            <textarea id="text" name="text" placeholder="write your text here"></textarea>
+            <br>
+            <button type="submit" id="plus">+</button>
+
+        </form>
+    </div>
+    <script>
+        
+    </script>
+</body>
+
+</html>

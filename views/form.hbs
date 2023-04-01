@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+          @keyframes rotate {
+            from {transform: rotate(0deg);}
+            25%{transform: rotate(90deg);}
+            50%{transform: rotate(180deg);}
+            75%{transform: rotate(270deg);}
+            100%{transform: rotate(360deg);}
+
+        }
+        #code{
+            visibility: hidden;
+        }
+        body{
+            background-image: url("images/yellow.png");
+            background-size: cover;
+        }
+        form{
+            background-color: white;
+            width:25%;
+            margin:auto;
+            position: relative;
+        }
+        form input, form button{
+            width:85%;
+        }
+        form input{
+            box-shadow: 2px 2px 5px black;
+            border:none;
+            height:30px
+        }
+          #s{
+            visibility: hidden;
+        }
+        form button{
+            background-color: rgb(220,192,2);
+            color: white;
+            border-radius: 10px;
+            border-color:rgb(220,192,2);
+            outline: none;
+            height:30px;
+             box-shadow: 2px 2px 5px rgb(220,192,2);
+        }
+        #circle{
+            width: 80px;
+            height: 80px;
+            font-size: 46px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 2px 2px 5px rgb(220,192,2);
+            background-color: white;
+            padding-left: 6px;
+            position: absolute;
+            top:-40px;
+            left:40%;
+            
+        }
+        form .fa-file {
+            margin-left: 19px;
+            margin-top: 17px;
+        }
+        .fa-user, .fa-lock{
+            color: rgb(100, 91, 31);
+            margin-left:10px
+        }
+        button{
+            display: block;
+            margin: auto;
+            background-color: rgb(220,192,2);
+        }
+        #new{
+            color: orange;
+            font-weight: bolder;
+            font-family: serif;
+            text-decoration: none;
+        }
+      
+    </style>
+    <title>Document</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {{>navbar}}
+    <Br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form method="POST" action="/">
+        <div id="circle"><i style="color:rgb(255,222,0)" class="fa-solid fa-file"></i></div>
+        <br>
+        <br>
+        <br>
+        <BR>
+        <i class="fa fa-user" aria-hidden="true"></i> &nbsp;<input id="username" name="username" placeholder="   Username">
+            <br>
+            <br>
+            <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;  <input type="password" id="pass" name="pass" placeholder="   Write your password">
+            <br>
+            <br>
+            <br>
+            <button type="submit" id="plus">LOGIN</button>
+            <div id="code">{{code}}</div>
+           <center> Don't have an account <a id="new" href="/newaccount">CREATE NEW ACCOUNT</a></center>
+           <br>
+    </form>
+    <Script>
+        if($("#code").text()=="valid"){
+
+        }
+        else if($("#code").text()=="account not found"){
+            alert("account not found")
+        }
+        else{
+            alert("invalid details")
+        }
+    </Script>
+</body>
+
+</html>

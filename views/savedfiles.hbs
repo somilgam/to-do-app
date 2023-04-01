@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+           background-image: "images/yellow.png";
+        }
+        #main{
+            display:flex;
+            flex-wrap: wrap;
+        }
+        .n {
+            width:15%;
+            margin-right:3%;
+            height:200px;
+            position:relative;
+            background-color: white;
+            word-wrap: break-word;
+            border: 1px solid rgb(220,192,2);
+            margin-top:50px
+        }
+        .pos{
+             position:absolute;
+             bottom:0;
+            right:0; 
+            height:26px;
+            width:38px;
+            
+            background: none;
+            border:none
+            
+        }
+        .fa-delete-left{
+            font-size: 23px;
+        }
+        ._id{
+            visibility: hidden;
+        }
+        .change{
+             position:absolute;
+             height: 20px;
+             width:20px;
+             bottom:27px;
+            right: 8.35px; 
+            border-radius: 50%;
+            background-color: red;
+    
+        }
+    </style>
+</head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+    {{>navbar}}
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="main">
+    {{#each result}}
+    <div class="n">
+        {{titl}}
+        <br>
+        {{text}}
+        
+        <form method="POST" action="/save">
+            <input class="_id" name="_id" value={{id}}>
+            <div class="change"></div>
+            <button type="submit" class="pos"><i class="fa-solid fa-delete-left"></i></button>
+        </form>
+          
+    </div>
+    {{/each}}
+    </div>
+   
+<script>
+    var arr=['red','blue','aqua','green','white']
+    var c=[];
+    var u=0;
+    $('.change').each((i,item)=>{
+        c.push(0);
+        $(item).attr('id','change'+u);
+        u=u+1;
+    })
+    u=0;
+    $('.n').each((i,item)=>{
+        $(item).attr('id','n'+u);
+        u=u+1;
+    })
+    $('.change').click((event)=>{
+         $('#n'+event.target.id[6]).css({
+            backgroundColor:arr[c[event.target.id[6]]]
+        })
+        c[event.target.id[6]]=(c[event.target.id[6]]+1)%5
+        $('#'+event.target.id).css({
+            backgroundColor:arr[c[event.target.id[6]]]
+        })
+    })
+</script>
+</body>
+</html>

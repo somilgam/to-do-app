@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #code{
+            visibility: hidden;
+        }
+        #s{
+            visibility: hidden;
+        }
+        body{
+             background-image: url("images/yellow.png");
+             background-size: cover;
+        }
+        form{
+            background-color: white;
+            width:25%;
+            margin:auto;
+            position: relative;
+        }
+        form input, form button{
+            width:85%;
+        }
+        form input{
+            box-shadow: 2px 2px 5px rgb(220,192,2);
+            border:none;
+            height:30px
+        }
+        form button{
+            background-color: rgb(100, 91, 31);
+            border:none;
+            color: white;
+            height:30px
+        }
+        #circle{
+            width: 80px;
+            height: 80px;
+            font-size: 46px;
+            border-radius: 50%;
+             box-shadow: 2px 2px 5px rgb(220,192,2);
+            background-color: white;
+            padding-left: 6px;
+            position: absolute;
+            top:-40px;
+            left:40%
+        }
+        form .fa-file {
+            margin-left: 19px;
+            margin-top: 17px;
+            
+        }
+        .fa-user, .fa-lock{
+            margin-left:10px;
+            color: rgb(100, 91, 31)
+        }
+        button{
+            display: block;
+            margin: auto;
+           
+        }
+    </style>
+    <title>Document</title>
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    {{>navbar}}
+    <Br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form method="POST" action="/newaccount">
+        <div id="circle"><i style="color:rgb(255,222,0)" class="fa-solid fa-file"></i></div>
+        <br>
+        <br>
+        <br>
+        <BR>
+        <i class="fa fa-user" aria-hidden="true"></i> &nbsp;<input id="username" name="username" placeholder="   Username">
+            <br>
+            <br>
+            <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;  <input type="password" id="pass" name="pass" placeholder="   Write your password">
+            <br>
+            <br>
+            <i class="fa fa-lock" aria-hidden="true"></i>&nbsp;  <input type="password" id="rpass" name="rpass" placeholder="   repeat password">
+            <br>
+            <br>
+            <button type="submit" id="plus">REGISTER ACCOUNT</button>
+            <br>
+            <br>
+            <div id="code">{{code}}</div>
+    </form>
+    <Script>
+        document.getElementById("myFrame").onload = function() {myFunction()};
+        function myFunction(){
+        if($('#code').text()!=""){
+        alert($('#code').text())}
+        }
+    </Script>
+</body>
+
+</html>
